@@ -1,11 +1,10 @@
 from __future__ import division
 
 import math
-import numpy
 from collections import Counter
 
 class FuzzyCategory(object) :
-    def __init__(self, field_name, corpus, other_fields):
+    def __init__(self, field_name, corpus, other_fields=None):
 
         docs = {}
         for document in corpus :
@@ -38,10 +37,13 @@ class FuzzyCategory(object) :
 
     def __call__(self, field_1, field_2):
         if not field_1 or not field_2 :
-            return numpy.nan
+            return float('nan')
         
         elif field_1 == field_2 :
             return 1.0
+        
+        elif (field_1 not in self.docs) or (field_2 not in self.docs) :
+            return float('nan')
 
         else :
             vector_1, norm_1 = self.docs[field_1]
@@ -56,5 +58,8 @@ class FuzzyCategory(object) :
                 return 0.0
 
     def _list(self, document, other_fields) :
-        return (document[field] for field in other_fields)
+        if other_fields is None :
+            return document.values()
+        else :
+            return (document[field] for field in other_fields)
  

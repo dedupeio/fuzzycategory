@@ -10,7 +10,7 @@ setup(
     name='fuzzycategory',
     url='https://github.com/datamade/fuzzycategory',
     version='0.0.2',
-    description='Simple cosine distance',
+    description='A context comparison',
     packages=['fuzzycategory'],
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
     classifiers=[
