@@ -9,7 +9,7 @@ except ImportError :
 setup(
     name='fuzzycategory',
     url='https://github.com/datamade/fuzzycategory',
-    version='0.0.3',
+    version='0.0.4',
     description='A context comparison',
     packages=['fuzzycategory'],
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',

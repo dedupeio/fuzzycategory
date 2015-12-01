@@ -36,10 +36,7 @@ class FuzzyCategory(object) :
             self.docs[field] = (vector, norm)
 
     def __call__(self, field_1, field_2):
-        if not field_1 or not field_2 :
-            return float('nan')
-        
-        elif field_1 == field_2 :
+        if field_1 == field_2 :
             return 1.0
         
         elif (field_1 not in self.docs) or (field_2 not in self.docs) :
