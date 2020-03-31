@@ -1,6 +1,8 @@
 # fuzzycategory
 Fuzzy Categorical Distances
 
+Part of the [Dedupe.io](https://dedupe.io/) cloud service and open source toolset for de-duplicating and finding fuzzy matches in your data.
+
 For cases which the number of classes is large, but much smaller than the number of of records we can do something like a "semantic" distance between categories. A good example would be something like occupation in campaign finance data.
 
 ```python
